@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified"
+           targetNamespace="http://sample"
+           xmlns="http://sample"
+           elementFormDefault="qualified"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="movies" type="rootType"/>
+  
+  <xs:complexType name="rootType">
+    <xs:sequence>
+      <xs:element name="movie" type="movieType" minOccurs="1" maxOccurs="unbounded"/>
+      <xs:element name="actor" type="actorType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="movieType">
+    <xs:sequence>
+      <xs:element name="title" type="xs:string"/>
+      
+      <xs:element name="year">
+        <xs:simpleType>
+          <xs:restriction base="xs:int">
+            <xs:pattern value="[1-9]\d{3}"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+
+      <xs:element name="genre">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="action"/>
+            <xs:enumeration value="adventure"/>
+            <xs:enumeration value="comedy"/>
+            <xs:enumeration value="drama"/>
+            <xs:enumeration value="fantasy"/>
+            <xs:enumeration value="horror"/>
+            <xs:enumeration value="mystery"/>
+            <xs:enumeration value="thriller"/>
+            <xs:enumeration value="western"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="actorType">
+    <xs:sequence>
+      <xs:element name="name" type="xs:string"/>
+      <xs:element name="dateOfBirth" type="xs:date"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<movies xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://sample"
+        xsi:schemaLocation="http://sample movies.xsd">
+  <movie>
+    <title>The Zarneki Intrusion</title>
+    <year>1995</year>
+    <genre>action</genre>
+  </movie>
+  <movie>
+    <title>Weird Science 2: Weirder Science</title>
+    <year>2019</year>
+    <genre>comedy</genre>
+  </movie>
+  <actor>
+    <name>Joe Shmoe</name>
+    <dateOfBirth>1983-06-23</dateOfBirth>
+  </actor>
+  <actor>
+    <name>Jane Doe</name>
+    <dateOfBirth>1979-11-04</dateOfBirth>
+  </actor>
+</movies>
